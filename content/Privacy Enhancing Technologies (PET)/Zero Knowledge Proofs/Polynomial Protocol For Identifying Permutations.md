@@ -1,6 +1,8 @@
 Permutation check란 두 벡터 $a=(a_1, a_2, ... a_n), b=(b_1, b_2, ... b_n)$와 permutation $\sigma: [n] \rightarrow [n]$ 이 존재할 때 다음이 성립하는지 확인하는 것이다. $$i\in [n], b_i = a_{\sigma(i)}$$
 먼저 군 $H: \{g^i\}_{i \in [n]}$의 [[Lagrange basis]] $L_i(X)$를 통해 두 벡터의 polynomial interpolation을 구해 보자. $$\begin{aligned}f=\sum_i^na_i​⋅L_i​(X) \\ g=\sum_i^nb_i​⋅L_i​(X) \end{aligned}$$이 두 다항식의 permutation check, 즉 $g(g^i)=f(g^{\sigma(i)})$를 증명하면 두 벡터 $a, b$의 permutation check도 증명된다. 따라서 지금부터는 두 다항식의 permutation check를 증명하는 프로토콜에 대해 알아보자.
 
++TODO) 왜 굳이 다항식을 사용해야 하는가? - 증명 안되는 부분이 있음
+
 ## Protocol
 **Preprocessed polynomials** :
 먼저 다음과 같은 다항식들을 가지고 있다고 가정하자. 
