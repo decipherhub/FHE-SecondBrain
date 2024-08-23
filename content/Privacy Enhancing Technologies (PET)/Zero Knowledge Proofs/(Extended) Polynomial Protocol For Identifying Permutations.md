@@ -6,7 +6,8 @@
 ## Protocol
 **Preprocessed polynomials** :
 먼저 다음과 같은 다항식들을 가지고 있다고 가정하자. 
-$$\begin{gathered}
+$$
+\begin{gathered}
 
 S_{IDj}(g^i) = (j-1) \cdot n + i \space for \space each \space i\in[n] \\
 S_{\sigma_j}(g^i) = \sigma((j-1) \cdot n + i) \space for \space each \space i\in[n] \\

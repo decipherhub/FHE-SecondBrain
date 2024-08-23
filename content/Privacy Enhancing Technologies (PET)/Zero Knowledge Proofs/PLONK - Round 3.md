@@ -1,6 +1,6 @@
 ## 1. 몫 다항식 계산
 
-Round 3에서 증명자는 transcript로부터 어떤 랜덤 $\alpha \in \mathbb{F}$를 뽑는데, 이는 quotient challenge(몫 챌린지)라고도 불린다. 그 이름의 이유는 이 $\alpha$를 이용해서 다음과 같은 몫 다항식 $t(x)$ 를 계산하기 때문이다.
+Round 3에서 증명자는 transcript로부터 어떤 랜덤 $\alpha \in \mathbb{F}$를 뽑는데($\alpha \equiv \mathcal{H}(transcript)$), 이는 quotient challenge(몫 챌린지)라고도 불린다. 그 이름의 이유는 이 $\alpha$를 이용해서 다음과 같은 몫 다항식 $t(x)$ 를 계산하기 때문이다. 
 $$
 \begin{aligned}
 t(X) = &\\ 
@@ -27,7 +27,8 @@ $f_i = 0$ 라는 표현은 모든 $a \in H$에 대해 $f_i(a) = 0$ 이 성립한
 
 ### 각 항의 의미
 
-이제 다시 괴상한 식으로 돌아가 보자. $$
+이제 다시 괴상한 식으로 돌아가 보자. 
+$$
 \begin{aligned}
 t(X) = &\\ 
 &(a(X)b(X)q_M(X) + a(X)q_L(X) + b(X)q_R(X) + c(X)q_O(X) + PI(X) + q_C(X)) \frac{1}{Z_H(X)} \\ 
@@ -38,22 +39,27 @@ t(X) = &\\
 $$
 이 식은 사실 위의 예시와 동일한 트릭을 이용하여 동일한 statement를 증명하고 있다. 이 식에서 $f_1, f_2, f_3$은 다음과 같이 구체화된다.
 $$
-f_1(X) = a(X)b(X)q_M(X) + a(X)q_L(X) + b(X)q_R(X) + c(X)q_O(X) + PI(X) + q_C(X)
+
 $$
 $$
 \begin{aligned}
+f_1(X) = &a(X)b(X)q_M(X) + a(X)q_L(X) + b(X)q_R(X) + c(X)q_O(X) + PI(X) + q_C(X) \\
+
 f_2(X) = &(a(X) + \beta X + \gamma)(b(X) + \beta k_1 X + \gamma)(c(X) + \beta k_2 X + \gamma)z(X) \\
 &- ((a(X) + \beta \sigma_1(X) + \gamma)(b(X) + \beta \sigma_2(X) + \gamma)(c(X) + \beta \sigma_3(X) + \gamma)z(X\omega) \\
+f_3(X) = &(z(X) - 1) L_1(X)\\
 \end{aligned}
 $$
-$$f_3(X) = (z(X) - 1) L_1(X)$$
+
 그리고 각 식이 의미하는 바는 다음과 같다.
 
 - $f_1(X)$
 	: 이 식이 모든 $a \in H$에 대해 0인지 체크하는 것은 gate constraint를 만족하는지 체크하는 것이다. (PI는 public input을 제대로 사용했는지 확인하는 [[Public Input Polynomial]])
+
 - $f_2(X)$
 	: 이 식이 모든 $a \in H$에 대해 0인지 체크하는 것은 copy constraint의 [[(Extended) Polynomial Protocol For Identifying Permutations |permutation check]] (b) 조건을 만족하는지 확인하는 것에 해당한다. $$(b) \quad Z(a)f'(a) =g'(a)Z(a \cdot g)$$
 	: 잘 보면 $z(X)$로 묶인 앞쪽이 $f'(a) = f(a)+\beta \cdot i + \gamma$ 라는 것을 알 수 있고, $z(X\omega)$ 로 묶인 뒤쪽이 $g'(a)=g(a)+\beta \cdot \sigma(i) + \gamma$ 라는 것을 알 수 있다. (사실 PLONK에서는 이를 변형하여 $\beta$에 곱해지는 값으로 $i$가 아니라 $X$를 사용하며, $Z(X)$, 즉 $z(X)$도 그에 따라 변형해서 만들고 있다.) 그리고 $z(X)$는 $Z(X)$와 같은데, 앞부분의 $Z_H(X)$가 곱해지는 부분을 무시할 수 있기 때문이다. (해당 부분은 영지식성을 위해 붙은 것으로 보이며 지금은 soundness에 대한 논의이므로 무시할 수 있음, 마찬가지로 $Z_H(X)$의 정의에 의해)
+
 - $f_3(X)$
 	: 이 식이 모든 $a \in H$에 대해 0인지 체크하는 것은 copy constraint의 [[(Extended) Polynomial Protocol For Identifying Permutations |permutation check]] (a) 조건을 만족하는지 확인하는 것에 해당한다. $f_2(X)$를 논의할 때 이야기했듯이 $z(X)$가 $Z(X)$와 같다고 생각할 수 있기 때문이다.
 
