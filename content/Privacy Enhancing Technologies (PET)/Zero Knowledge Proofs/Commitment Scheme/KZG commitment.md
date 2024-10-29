@@ -20,7 +20,7 @@ For a polynomial $P(x) = \sum_{i=0}^d p_i x^i$, the commitment $C$ is calculated
 $C = [P(s)]_1 = g_1^{P(s)} = \prod_{i=0}^d ([s^i]_1)^{p_i}$
 
 To prove that the polynomial $P(x)$ evaluates to $b$ at $x = a$, the prover constructs a quotient polynomial:
-$q(x) = {{P(x) − P(a)} \over {x − a}}$ (where $b = P(a)$)
+$q(x) = {{P(x) - P(a)} \over {x - a}}$ (where $b = P(a)$)
 The proof $\pi$ is then calculated as $\pi = [q(s)]_1 = g_1^{q(s)}$.
 
 Given a commitment $C = [P(s)]_1$, an evaluation $P(a) = b$, and a proof $\pi = [q(s)]_1$. 
@@ -34,7 +34,7 @@ This becomes:
 - $e([P(s)]_1 - [b]_1, [1]_2) = e(g_1^{P(s)-b}, g_2^1) = {e(g_1, g_2)}^{P(s)-b}$
 - $e([q(s)]_1, [s]_2 - [a]_2) = e(g_1^{q(s)}, g_2^{s-a}) = e(g_1, g_2)^{q(s)(s-a)}$
 
-$e(g_1, g_2)^{(P(s) - b)} = e(g_1, g_2)^{q(s)(s - a)}$
+Therefore, $e(g_1, g_2)^{(P(s) - b)} = e(g_1, g_2)^{q(s)(s - a)}$
 
 Thus, $P(s) - b = q(s)(s - a)$
 
