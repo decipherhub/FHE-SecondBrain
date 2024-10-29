@@ -1,5 +1,7 @@
 # What does this PR do?
-
+<!-- 
+Please provide a description of the work you’ve done. Include the issue this change addresses (if applicable), along with the motivation and context behind it.
+--> 
 
 ## Before reviewing
 - [ ] Check for missing / redundant content
@@ -20,7 +22,7 @@ Privacy Enhancing Technologies (PET):
 - SMC: @hunjyeong
 - DP:
 - FL:
-- TEE: @Cosmodude
+- TEE: @Cosmodude @healthykim
 - ZKP: @Insun35 @healthykim @hunjyeong
 Blockchain: @abell1689neo
 etc: @yijun-lee @Cosmodude
