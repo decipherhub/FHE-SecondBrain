@@ -2,7 +2,7 @@
 
 One of the most widely used polynomial commitment schemes is the KZG commitment scheme. The scheme was originally published in 2010 by Kate, Zaverucha, and Goldberg.
 
-Let $G_1$ and $G_2$ be two elliptic curve groups of order $p$, and a non-trivial bilinear mapping $e : G_1 x G_2 → G_T$.
+Let $G_1$ and $G_2$ be two elliptic curve groups of order $p$, and a non-trivial bilinear mapping $e : G_1$ x $G_2 → G_T$.
 
 Let $g_1 \in G_1$ and $g_2 \in G_2$ be generators.
 We define $[x]_1 := g_1^x$ and $[x]_2 := g_2^x$, where $x \in 𝔽_p$. 
@@ -13,7 +13,7 @@ The SRS is generated as a set of public parameters required for proof generation
 
 **Trusted setup** 
 A trusted setup selects a random secret $s \in 𝔽_p$.
-For a polynomial with a maximum degree $d$, the setup releases $[s^i]_1$ and $[s^i]_2 for i = 0,1,...,d$.
+For a polynomial with a maximum degree $d$, the setup releases $[s^i]_1$ and $[s^i]_2$ for $i = 0,1,...,d$.
 
 **Commitment**
 For a polynomial $P(x) = \sum_{i=0}^d p_i x^i$, the commitment $C$ is calculated as:
