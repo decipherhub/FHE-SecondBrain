@@ -13,16 +13,16 @@ members/contributors who may be interested in your PR.
 
 <!-- Your PR will be replied to more quickly if you can figure out the right person to tag with @
 
-Basic Algebra: 
-Basic Cryptography: 
-Privacy Enhancing Technologies (PET): 
-  - FHE: 
-  - SMC: 
-  - DP:
-  - FL: 
-  - TEE: 
-  - ZKP: 
-Blockchain: 
-etc: 
+Basic Algebra: @yijun-lee @hunjyeong
+Basic Cryptography: @HyesuKim-dot @abell1689neo @hwamzzx
+Privacy Enhancing Technologies (PET):
+- FHE: @yijun-lee
+- SMC: @hunjyeong
+- DP:
+- FL:
+- TEE: @Cosmodude
+- ZKP: @Insun35 @healthykim @hunjyeong
+Blockchain: @abell1689neo
+etc: @yijun-lee @Cosmodude
 
 -->
