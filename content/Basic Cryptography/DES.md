@@ -1,3 +1,4 @@
+
 ## Intro
 DES is a symmetric key block cipher that uses the same key for both encryption and decryption, processing data in fixed-size blocks.
 > [!note]
