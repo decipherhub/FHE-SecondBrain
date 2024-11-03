@@ -39,6 +39,7 @@ The first step applied when 64-bit plaintext is input is the **Initial Permutati
 | 59  | 51  | 43  | 35  | 27  | 19  | 11  |  3  |
 | 61  | 53  | 45  | 37  | 29  | 21  | 13  |  5  |
 | 63  | 55  | 47  | 39  | 31  | 23  | 15  |  7  |
+
 The permuted input takes bit 58 of the original input as its first bit, bit 50 as its second bit, and continues in this manner, ending with bit 7 as its final bit. This permuted block then serves as the input to a key-dependent computation, which is described below.
 
 ### 16 Rounds of F function and Swap
