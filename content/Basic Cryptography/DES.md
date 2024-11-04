@@ -7,22 +7,23 @@ DES is a symmetric key block cipher that uses the same key for both encryption a
 ## History
 In 1973, the National Bureau of Standards (NBS) in the United States recognized the need for a standardized encryption method and called for proposals for what would become the DES (Data Encryption Standard). In 1977, NBS selected a modified version of an encryption algorithm called Lucifer, developed by IBM, to become DES.
 The National Security Agency (NSA) made modifications to Lucifer, including reducing the key length from 128 bits to 56 bits and altering the structure of the S-Box. This led to speculation that the U.S. intelligence agencies could more easily decrypt messages encrypted with DES. Despite these suspicions, DES went on to become the most widely used block cipher worldwide for 30 years after its publication.
-When DES was first introduced in the 1970s, a 56-bit key length provided adequate security. However, with advancements in computing, DES is no longer considered secure. To address these limitations, multiple DES techniques were introduced, notably Triple DES (3DES), which applies DES three times and provides 112 bits of security, making it more robust.
+When DES was first introduced in the 1970s, a 56-bit key length provided adequate security. However, with advancements in computing, DES is no longer considered secure. In the late 1990s, distributed.net and the EFF DES cracker (Deep Crack) successfully demonstrated how feasible it was to brute-force DES keys, highlighting the vulnerability of the 56-bit key length. The EFF built Deep Crack, which was capable of breaking DES encryption in less than a day. These demonstrations underscored that DES was no longer suitable for secure communication.
+To address these limitations, multiple DES techniques were introduced, notably Triple DES (3DES), which applies DES three times and provides 112 bits of security, making it more robust.
 In 2005, NIST officially retired simple DES. Triple DES was also deprecated in 2019, and its usage was prohibited by the end of 2023, except for processing already encrypted data. Today, DES has been replaced by the more secure and powerful [[AES]].
 
 ## Design
 High-level description of DES is as following:
 
 1. Initial Permutation (IP)
-2. 16 Rounds of F function and Swap
-	* F Function
+2. 16 Rounds of Feistel function and Swap
+	* Feistel Function
 		* Expansion P-Box
 		* XOR with Round Key
 		* S-Box Substitution
 		* P-Box Permutation
 	* Swap
-1. Inverse Initial Permutation (IP⁻¹)
-2. Key Scheduling
+3. Inverse Initial Permutation (IP⁻¹)
+4. Key Scheduling
 	* Parity Bit Drop (PC-1)
 	* Shift
 	* Compression P-Box (PC-2)
@@ -43,7 +44,7 @@ The first step applied when 64-bit plaintext is input is the **Initial Permutati
 
 The permuted input takes bit 58 of the original input as its first bit, bit 50 as its second bit, and continues in this manner, ending with bit 7 as its final bit. This permuted block then serves as the input to a key-dependent computation, which is described below.
 
-### 16 Rounds of F function and Swap
+### 16 Rounds of Feistel function and Swap
 DES consists of a total of 16 rounds, each divided into two stages: the **Mixer** stage and the **Swapper** stage.
 
 1. **Mixer Stage**: In this stage, the 32-bit right half and the round key are used to calculate the F function value, which is then XORed with the 32-bit left half. This can be represented by the following formula: $$ R_i = L_{i-1} \oplus F(R_{i-1}, k_i) $$
@@ -52,11 +53,11 @@ Thus, the i-th round can be represented as follows.
 $$ L_i = R_{i-1} $$
 $$ R_i = L_{i-1} \oplus F(R_{i-1}, k_i) $$
 
-#### F function
+#### Feistel function
 ##### Expansion P-Box
 The **Expansion P-Box** is a process that permutes the order of the bits of a 32-bit input value while expanding the output to 48 bits.
 The method for expanding the input value is as follows:
-![[Pasted image 20241103212213.png]]
+![[DES(1).png]]
 1. Divide the 32-bit input value into 8 parts, each consisting of 4 bits.
 2. Expand each 4-bit part to 6 bits according to predefined rules.
 
