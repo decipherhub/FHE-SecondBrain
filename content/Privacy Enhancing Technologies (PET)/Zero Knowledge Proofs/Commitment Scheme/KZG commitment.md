@@ -52,9 +52,9 @@ Thus, $P(s) - b = q(s)(s - a)$
 
 This equation holds if and only if $P(a) = b$, due to the properties of the pairing function and the structure of $q(x)$.
 
-
-
+<br/><br/>
 - References
 
 <https://www.iacr.org/archive/asiacrypt2010/6477178/6477178.pdf>
+
 <https://eprint.iacr.org/2022/621.pdf>
