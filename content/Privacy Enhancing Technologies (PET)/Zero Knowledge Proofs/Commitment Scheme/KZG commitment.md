@@ -6,7 +6,7 @@ Let $G_1$ and $G_2$ be two elliptic curve groups of order $p$, and a non-trivial
 
 Let $g_1 \in G_1$ and $g_2 \in G_2$ be generators.
 
-We define $[x]_1 := g_1^x$ and $[x]_2 := g_2^x$, where $x \in 𝔽_p$. 
+We define $[x]_1 := g_1^x$ and $[x]_2 := g_2^x$, where $x \in \mathbb{F}_p$. 
 
 **Structured Reference String(SRS)**
 
@@ -15,7 +15,7 @@ The SRS is generated as a set of public parameters required for proof generation
 
 **Trusted setup** 
 
-A trusted setup selects a random secret $s \in 𝔽_p$.
+A trusted setup selects a random secret $s \in \mathbb{F}_p$.
 
 For a polynomial with a maximum degree $d$, the setup releases $[s^i]_1$ and $[s^i]_2$ for $i = 0,1,...,d$.
 
