@@ -59,11 +59,11 @@ No party can determine another party's private data using the random shares rece
 
 The MPC protocol can be classified into two main categories based on the functions they are designed to perform.
 
-**Specialized Protocols**
+#### Specialized Protocols
 
 These are designed and optimized for specific functionality and are built around a specific task, such as Private Set Intersection(PSI) or voting. By leveraging the specific structure of the function, these protocols can provide significant performance improvements.
 
-**Generic Protocols**
+#### Generic Protocols
 
 These protocols can compute any function that can be represented as a fixed-size circuit. An example is Yao’s Garbled Circuits protocol, which can be applied to a wide range of problems.
 
@@ -80,21 +80,20 @@ We can use the following properties to help us define an ideal secure protocol
 
 These conditions guarantee the correctness of the output and ensure that no party can disrupt the process or gain an unfair advantage.
 
-**Input Integrity**
+#### Input Integrity
 
 In MPC, participants can input any value, which means they could potentially influence the result by providing incorrect inputs (manipulating the process). To mitigate this, mechanisms like requiring signed inputs verified can be used, though this can increase computational costs.
 
-**Result Information**
+#### Result Information
 
 The outcome could reveal information about the inputs or participants.
-
-
+<br/><br/>
 Therefore, additional measures are needed to ensure input integrity and protect the output from giving away information.
 
 
 ## SMPC For Web3
 
-**MPC-Based Web3 Wallets**
+#### MPC-Based Web3 Wallets
 
 ![w1](https://github.com/user-attachments/assets/d8ccbce7-cf2d-40ad-83d3-719ec1294acf)
 
@@ -103,7 +102,7 @@ In an MPC-compatible blockchain environment, the private keys of a Web3 wallet c
 For example, custodians use MPC-based Web3 wallets to secure digital assets and sign transactions. They split the private key into multiple parts and use MPC to sign transactions.
 
 
-**MPC vs. Multisig Wallets**
+#### MPC vs. Multisig Wallets
 
 ![m2](https://github.com/user-attachments/assets/220ab54d-1484-4619-9e42-fdf71bd094d6)
 
@@ -137,14 +136,14 @@ In other words, the circuit can be thought of as a tool that expresses the funct
 
 ![cc](https://github.com/user-attachments/assets/82a911eb-48dd-416e-b02a-59ffe2566cc3)
 
-**Boolean Circuits**
+#### Boolean Circuits
 
 These circuits use logic gates to process binary variables and require redefinition of basic operations for every bit width. In such protocols, to support arithmetic on n-bit integers, n-bit addition and multiplication circuits must be implemented.
 
-**Arithmetic Circuits**
+#### Arithmetic Circuits
 
 These circuits perform operations on numerical values, typically within a finite field with a predetermined field size. Although arithmetic circuits are primarily designed for arithmetic operations, non-arithmetic operations such as comparisons and equality checks can also be implemented.
-<br/>
+<br/><br/>
 To express a function as a circuit, all computations must be deterministic (i.e., always produce the same result for the same input values) and free of infinite loops. A compiler converts a program written in a high-level language into circuit form. This converted circuit is passed as input to a runtime, which executes the MPC protocol to produce the output.
 
 
