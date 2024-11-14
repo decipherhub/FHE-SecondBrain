@@ -51,3 +51,8 @@ Therefore, $e(g_1, g_2)^{(P(s) - b)} = e(g_1, g_2)^{q(s)(s - a)}$
 Thus, $P(s) - b = q(s)(s - a)$
 
 This equation holds if and only if $P(a) = b$, due to the properties of the pairing function and the structure of $q(x)$.
+
+
+References
+<https://www.iacr.org/archive/asiacrypt2010/6477178/6477178.pdf>
+<https://eprint.iacr.org/2022/621.pdf>
