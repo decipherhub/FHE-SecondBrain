@@ -3,7 +3,7 @@
 
 
 - [[Fully Homomorphic Encryption]]
-- [[Secure Multiparty Computation]]
+- [[Secure Multi-Party Computation]]
 - [[Differential Privacy]]
 - [[Federated Learning]]
 - [[Trusted Execution Environment]]
