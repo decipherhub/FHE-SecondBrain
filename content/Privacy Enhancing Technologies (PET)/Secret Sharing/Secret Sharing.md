@@ -23,7 +23,6 @@ Let's look at how **Additive Secret Sharing** works with an example involving th
     - $S_3 = S - (S_1 + S_2) = 1337 - (220 + 540) = 577$
 
 Let’s split another secret to perform an addition:
-
 - $T = 1440$
     - $T_1 = 118$
     - $T_2 = 330$
@@ -32,7 +31,6 @@ Let’s split another secret to perform an addition:
 **Share Distribution**
 
 Distribute the shares to the participants.
-
 - Participant 1: $S_1$ and $T_1$
 - Participant 2: $S_2$ and $T_2$
 - Participant 3: $S_3$ and $T_3$
@@ -40,7 +38,6 @@ Distribute the shares to the participants.
 **Perform Operation**
 
 Each participant can perform the addition locally.
-
 - $R_1 = S_1 + T_1 = 220 + 118 = 338$
 - $R_2 = S_2 + T_2 = 540 + 330 = 870$
 - $R_3 = S_3 + T_3 = 577 + 992 = 1569$
@@ -48,7 +45,6 @@ Each participant can perform the addition locally.
 **Secret Reconstruction**
 
 Reconstruct the result from the shares:
-
 - $R = S + T$
 - $R = (S_1 + S_2 + S_3) + (T_1 + T_2 + T_3) = (S_1 + T_1) + (S_2 + T_2) + (S_3 + T_3)$
 - $R = 338 + 870 + 1569 = 2777$
