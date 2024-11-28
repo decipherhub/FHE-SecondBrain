@@ -50,6 +50,7 @@ Reconstruct the result from the shares:
 - $R = 338 + 870 + 1569 = 2777$
 
 <br/>
+
 The overall secret value $R$ is obtained as the sum of two secret values, $S$ and $T$.
 
 Each participant performs individual operations using only their own share, and in the final step, all results are combined to reconstruct the final secret.
