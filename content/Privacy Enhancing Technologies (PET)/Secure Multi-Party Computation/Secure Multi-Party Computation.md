@@ -55,6 +55,32 @@ This example uses a relatively simple additive secret-sharing technique, but a m
 No party can determine another party's private data using the random shares received from others. In addition, each party can obtain the correct result, ensuring data integrity during the computation process.
 
 
+
+## Use Cases
+One of the primary applications of MPC is the secure aggregation of data from different data owners. For example, when multiple organizations need to perform joint data analysis or derive insights from various datasets, MPC can be used to ensure that each party's data remains private throughout the process. This is particularly useful in scenarios where data privacy is crucial, such as healthcare, finance, and collaborative research. By using MPC, organizations can collaborate and derive valuable insights without compromising data privacy and security.
+
+**Privacy-Preserving Machine Learning**
+
+Privacy can be enhanced during the machine learning training and inference phases. Multiple parties can collaboratively train a model without disclosing their individual datasets. In the inference phases, clients can receive model outputs without exposing their input data or the server’s model.
+
+**Threshold Cryptography**
+
+Companies can enhance key protection by distributing key shares across multiple secure environments. This reduces the risk of key compromise, as no single location holds the entire private key. An adversary would need to breach all environments to access the complete key, thereby enhancing security.
+
+**Collaborative Data Analysis**
+
+Multiple parties can combine and analyze datasets without disclosing their private information. This enables data analysis while preserving privacy and maintaining confidentiality.
+
+
+
+## Advantages
+1. **Privacy Assurance:** MPC ensures that sensitive data remains private, with computations carried out without exposing individual inputs.
+2. **Data Security:** As data is not exposed in plaintext, it helps prevent data breaches and leaks.
+3. **Regulatory Compliance:** MPC aids in complying with data protection regulations, ensuring that sensitive data is not shared or exposed.
+4. **Collaborative Analysis:** Multiple entities can collaborate on data analysis projects without compromising their proprietary data.
+
+
+
 ## Protocol Scope
 
 The MPC protocol can be classified into two main categories based on the functions they are designed to perform.
@@ -110,46 +136,3 @@ Similar to the multi-signature signing process, MPC can play a key role in enabl
 
 - **Multi-sig wallet**: Relies on multiple private keys to sign transactions.
 - **MPC wallet**: Splits a single key into multiple parts and distributes them among custodians.
-
-
-## Use Cases
-One of the primary applications of MPC is the secure aggregation of data from different data owners. For example, when multiple organizations need to perform joint data analysis or derive insights from various datasets, MPC can be used to ensure that each party's data remains private throughout the process. This is particularly useful in scenarios where data privacy is crucial, such as healthcare, finance, and collaborative research. By using MPC, organizations can collaborate and derive valuable insights without compromising data privacy and security.
-
-**Privacy-Preserving Machine Learning**
-
-Privacy can be enhanced during the machine learning training and inference phases. Multiple parties can collaboratively train a model without disclosing their individual datasets. In the inference phases, clients can receive model outputs without exposing their input data or the server’s model.
-
-**Threshold Cryptography**
-
-Companies can enhance key protection by distributing key shares across multiple secure environments. This reduces the risk of key compromise, as no single location holds the entire private key. An adversary would need to breach all environments to access the complete key, thereby enhancing security.
-
-**Collaborative Data Analysis**
-
-Multiple parties can combine and analyze datasets without disclosing their private information. This enables data analysis while preserving privacy and maintaining confidentiality.
-
-
-## Circuits
-
-Many protocols use circuits to represent the function being computed. This circuit predefines the structure and operations necessary to perform a specific function and remains in a fixed form regardless of the actual input values. As a result, no information about the input values can be inferred from the protocol's runtime alone.
-
-In other words, the circuit can be thought of as a tool that expresses the function we want to compute in a fixed form.
-
-![cc](https://github.com/user-attachments/assets/82a911eb-48dd-416e-b02a-59ffe2566cc3)
-
-#### Boolean Circuits
-
-These circuits use logic gates to process binary variables and require redefinition of basic operations for every bit width. In such protocols, to support arithmetic on n-bit integers, n-bit addition and multiplication circuits must be implemented.
-
-#### Arithmetic Circuits
-
-These circuits perform operations on numerical values, typically within a finite field with a predetermined field size. Although arithmetic circuits are primarily designed for arithmetic operations, non-arithmetic operations such as comparisons and equality checks can also be implemented.
-<br/><br/>
-To express a function as a circuit, all computations must be deterministic (i.e., always produce the same result for the same input values) and free of infinite loops. A compiler converts a program written in a high-level language into circuit form. This converted circuit is passed as input to a runtime, which executes the MPC protocol to produce the output.
-
-
-## Advantages
-1. **Privacy Assurance:** MPC ensures that sensitive data remains private, with computations carried out without exposing individual inputs.
-2. **Data Security:** As data is not exposed in plaintext, it helps prevent data breaches and leaks.
-3. **Regulatory Compliance:** MPC aids in complying with data protection regulations, ensuring that sensitive data is not shared or exposed.
-4. **Collaborative Analysis:** Multiple entities can collaborate on data analysis projects without compromising their proprietary data.
-
