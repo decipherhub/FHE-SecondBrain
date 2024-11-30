@@ -6,7 +6,7 @@ Given a [[Binary Operation]] $*$ : $G \times G \rightarrow G$ on a set $G$, the 
 2.  There exists an identity element $e \in G$.
 3.  For each element $a \in G$, there exists an inverse element $a^{-1} \in G$.
 
-# Example
+### Example
 
 - $GL_{2}(\mathbb{R})$ is the set of all invertible 2×2 matrices, and with matrix multiplication, it forms a group.
 
@@ -21,11 +21,11 @@ Given a [[Binary Operation]] $*$ : $G \times G \rightarrow G$ on a set $G$, the 
 
 <br/>
 
-## Abelian Group
+# Abelian Group
 
 A group $G$ under $*$ is an abelian group if $*$ is commutative.
 
-# Example
+### Example
 
 - $(\mathbb{R}, +)$ is an abelian group.
 - $(\mathbb{R}^*, \cdot)$ is an abelian group. ($\mathbb{R}^* = \mathbb{R} \ {0}$)
