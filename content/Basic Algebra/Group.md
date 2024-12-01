@@ -12,7 +12,7 @@ Given a [[Binary Operation]] $*$ : $G \times G \rightarrow G$ on a set $G$, the 
 
 <br/>
 
-**Additional Information**
+**Note**
 
 - Commutativity: For $ \forall a, b \in G$, $a * b = b * a$
 - Associativity: For $ \forall a, b, c \in G$, $(a * b) * c = a * (b * c)$
