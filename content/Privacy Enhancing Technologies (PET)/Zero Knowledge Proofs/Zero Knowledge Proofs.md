@@ -47,6 +47,7 @@ zkSNARK use cases
 - [[ZK-SNARK]]
 - [[Quadratic Arithmetic Program]]
 - [[Polynomial theorem]]
+- [[KZG commitment]]
 - [[Pinocchio protocol]]
 - [[Groth16]]
 - [[zkEVM]]
