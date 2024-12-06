@@ -10,10 +10,10 @@ PQC aims to develop new cryptographic systems that can run on classical computer
 
 ### Challenges with Current Cryptographic Algorithms
 
-The public key cryptosystems currently in widespread use, such as **RSA**, **Elliptic Curve Cryptography (ECC)**, and **Diffie-Hellman key exchange**, rely on the computational difficulty of certain mathematical problems:
+The public key cryptosystems currently in widespread use, such as [[RSA]], **Elliptic Curve Cryptography (ECC)**, and [[Diffie-Hellman]] **key exchange**, rely on the computational difficulty of certain mathematical problems:
 
-- **Integer Factorization**: The basis for RSA encryption.
-- **Discrete Logarithm Problem**: Used in Diffie-Hellman and ECC.
+- **Integer Factorization**: The basis for [[RSA]] encryption.
+- **Discrete Logarithm Problem**: Used in [[Diffie-Hellman]] and ECC.
 
 Quantum computers threaten these systems because of algorithms like **Shor's algorithm**, which can solve these problems in polynomial time, effectively breaking the security of these cryptosystems.
 
@@ -21,13 +21,13 @@ Quantum computers threaten these systems because of algorithms like **Shor's alg
 
 - **Developed by**: Peter Shor in 1994.
 - **Capability**: Efficiently factors large integers and computes discrete logarithms.
-- **Impact**: Can break RSA, ECC, and other cryptosystems relying on these hard problems.
+- **Impact**: Can break [[RSA]], ECC, and other cryptosystems relying on these hard problems.
 
 #### Grover's Algorithm
 
 - **Developed by**: Lov Grover in 1996.
 - **Capability**: Provides a quadratic speedup for unstructured search problems.
-- **Impact**: Affects symmetric-key algorithms like AES by effectively halving the key length (e.g., a 256-bit key would offer 128 bits of security against quantum attacks).
+- **Impact**: Affects symmetric-key algorithms like [[AES]] by effectively halving the key length (e.g., a 256-bit key would offer 128 bits of security against quantum attacks).
 
 ### Implications
 
@@ -49,7 +49,7 @@ Post-quantum cryptographic algorithms are based on mathematical problems believe
 
 1. **Lattice-Based Cryptography**
 
-   - **Mathematical Basis**: Hard problems in lattice structures, such as the Shortest Vector Problem (SVP) and Learning With Errors (LWE).
+   - **Mathematical Basis**: Hard problems in lattice structures, such as the Shortest Vector Problem (SVP) and [[Learning With Errors (LWE)]].
    - **Features**:
      - Strong security proofs.
      - Efficiency and scalability.
@@ -96,7 +96,7 @@ Post-quantum cryptographic algorithms are based on mathematical problems believe
 
 ### Overview
 
-The **National Institute of Standards and Technology (NIST)** initiated the Post-Quantum Cryptography Standardization Program in 2016 to evaluate and standardize one or more quantum-resistant public-key cryptographic algorithms.
+The **National Institute of Standards and Technology** [NIST](https://www.nist.gov/) initiated the Post-Quantum Cryptography Standardization Program in 2016 to evaluate and standardize one or more quantum-resistant public-key cryptographic algorithms.
 
 ### Objectives
 
@@ -128,15 +128,15 @@ The **National Institute of Standards and Technology (NIST)** initiated the Post
 
 In July 2022, NIST announced the selection of four algorithms for standardization:
 
-1. **CRYSTALS-Kyber** (Public-Key Encryption/KEM)
-2. **CRYSTALS-Dilithium** (Digital Signature)
-3. **FALCON** (Digital Signature)
-4. **SPHINCS+** (Digital Signature)
+1. [CRYSTALS-Kyber](https://csrc.nist.gov/pubs/fips/203/ipd) (Public-Key Encryption/KEM)
+2. [CRYSTALS-Dilithium](https://csrc.nist.gov/pubs/fips/204/ipd) (Digital Signature)
+3. [FALCON](https://csrc.nist.gov/pubs/fips/205/ipd) (Digital Signature)
+4. [SPHINCS+](https://csrc.nist.gov/CSRC/media/Presentations/SPHINCS/images-media/SPHINCS-Plus-April2018.pdf) (Digital Signature)
 
 ### CRYSTALS-Kyber
 
 - **Type**: Public-Key Encryption and Key-Encapsulation Mechanism (KEM).
-- **Basis**: Lattice-based, relying on the hardness of the Learning With Errors (LWE) problem.
+- **Basis**: Lattice-based, relying on the hardness of the [[Learning With Errors (LWE)]] problem.
 - **Features**:
   - **Efficiency**: Offers a good balance between security and performance.
   - **Small Key Sizes**: Relatively compact public and private keys.
@@ -144,7 +144,7 @@ In July 2022, NIST announced the selection of four algorithms for standardizatio
 
 ### CRYSTALS-Dilithium
 
-- **Type**: Digital Signature Scheme.
+- **Type**: [[Digital Signature]] Scheme.
 - **Basis**: Lattice-based, using Module-LWE and Module-SIS problems.
 - **Features**:
   - **Strong Security**: Based on well-studied hard lattice problems.
@@ -153,8 +153,8 @@ In July 2022, NIST announced the selection of four algorithms for standardizatio
 
 ### FALCON
 
-- **Type**: Digital Signature Scheme.
-- **Basis**: Lattice-based, specifically NTRU lattices.
+- **Type**: [[Digital Signature]] Scheme.
+- **Basis**: Lattice-based, specifically [NTRU lattices](https://www.ntru.org/f/hps98.pdf).
 - **Features**:
   - **Compact Signatures**: Smaller signature sizes compared to other lattice-based schemes.
   - **Efficient Verification**: Fast verification times.
@@ -162,7 +162,7 @@ In July 2022, NIST announced the selection of four algorithms for standardizatio
 
 ### SPHINCS+
 
-- **Type**: Digital Signature Scheme.
+- **Type**: [[Digital Signature]] Scheme.
 - **Basis**: Hash-based, relying solely on the security of underlying hash functions.
 - **Features**:
   - **Conservative Security**: Minimal assumptions beyond the hash function's security.
@@ -180,4 +180,3 @@ In July 2022, NIST announced the selection of four algorithms for standardizatio
 
 Post-Quantum Cryptography is a critical field addressing the imminent threat that quantum computing poses to current cryptographic systems. By developing and standardizing algorithms resistant to quantum attacks, PQC ensures the confidentiality, integrity, and authenticity of digital communications in the quantum era.
 
-Organizations, governments, and individuals 
