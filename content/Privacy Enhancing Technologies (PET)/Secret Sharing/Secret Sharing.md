@@ -57,6 +57,6 @@ In the previous steps, each participant operates solely on their own share, so n
 <br/>
 
 ### Index
-- [[Shamir’s Secret Sharing Scheme]]
+- [[Shamir's Secret Sharing Scheme]]
 - [[Linear Secret Sharing Scheme]]
 
