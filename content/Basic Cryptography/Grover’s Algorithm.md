@@ -8,16 +8,15 @@ Grover’s Algorithm is a **quantum** algorithm discovered by Lov Grover in 1996
 
 In the **unstructured search** setting, you have:
 - A “black box” or “oracle” function $ f(x) $ that returns:
-  $[
-    f(x) = 
-    \begin{cases}
-      1 & $text{if } x = x_\text{target}, \\
-      0 & $text{otherwise}.
-    \end{cases}
-  $]
+$$
+f(x) = \begin{cases}
+  1 & \text{if } x = x_\text{target}, \\
+  0 & \text{otherwise}.
+\end{cases}
+$$
 - A database of size $ N $ (which is unstructured or unsorted).
 
-**Classically**, finding $ x_{$text{target}} $ by querying the oracle could take $ O(N) $ tries (in the worst case). **Grover’s Algorithm**, running on a quantum computer, needs on the order of $ O($sqrt{N}) $ queries—a quadratic improvement.
+**Classically**, finding $$ x_{\text{target}} $$ by querying the oracle could take $ O(N) $ tries (in the worst case). **Grover’s Algorithm**, running on a quantum computer, needs on the order of $ O(\sqrt{N}) $ queries—a quadratic improvement.
 
 ---
 
@@ -28,7 +27,10 @@ In the **unstructured search** setting, you have:
    - Apply the Hadamard transform to create a uniform superposition over all possible database indices.
 
 2. **Oracle Query (Phase Flip)**  
-   - The algorithm has access to an *oracle* (a quantum circuit) that flips the phase of the state $\lvert x_{$text{target}} \rangle$.  
+   - The algorithm has access to an *oracle* (a quantum circuit) that flips the phase of the state 
+$$
+\lvert x_{\text{target}} \rangle.
+$$  
    - If the register is in the state $\lvert x_{\text{target}} \rangle$, the oracle applies a phase of $-1$ to that amplitude.
 
 3. **Grover Diffusion (Amplitude Amplification)**  
@@ -73,8 +75,8 @@ This quadratic speed-up, while not exponential, is still significant for large d
 
 ## 5. Oracle Construction
 
-Unlike Shor’s Algorithm—where the arithmetic is explicit—Grover’s Algorithm requires designing a **quantum oracle**:
-- The oracle identifies the target item $x_{$text{target}} $ by flipping its amplitude’s phase.
+Unlike [[Shor’s Algorithm]]—where the arithmetic is explicit—Grover’s Algorithm requires designing a **quantum oracle**:
+- The oracle identifies the target item $x_{\text{target}} $ by flipping its amplitude’s phase.
 - In practical applications, building such an oracle might itself be non-trivial.
 
 ---
@@ -82,7 +84,7 @@ Unlike Shor’s Algorithm—where the arithmetic is explicit—Grover’s Algori
 ## 6. Practical Considerations
 
 1. **Noise and Decoherence**  
-   - Like all quantum algorithms, Grover’s Algorithm requires *coherence* over a sequence of operations.  
+   - Like all quantum algorithms, Grover’s Algorithm requires *[coherence](https://en.wikipedia.org/wiki/Coherence_(physics))* over a sequence of operations.  
    - In current “noisy intermediate-scale quantum” (NISQ) devices, the depth (number of gates in the circuit) must remain low to keep errors manageable.
 
 2. **Exact vs. Approximate Counting**  
@@ -136,4 +138,5 @@ def grover_circuit(num_qubits, oracle_circuit):
 ```
 Example usage (very simplified):
 Suppose our 'oracle_circuit' flips the phase of a known target state |101>.
+
 In a real scenario, you build the oracle_circuit so that it knows which state(s) to flip. Then you run grover_circuit and measure.
