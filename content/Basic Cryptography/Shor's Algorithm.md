@@ -58,7 +58,7 @@ Modern cryptosystems like [[RSA]], [[Diffie–Hellman]] **Key Exchange**, and[[E
 
 ## Example: Factoring a Small Number with Shor's Algorithm
 
-Below is a simplified Python-style pseudo-code using [Qiskit](https://qiskit.org/). This example can factor very small numbers (like 15, 21), illustrating core concepts rather than large-scale factorization.
+Below is a simplified Python-style pseudo-code using [Qiskit](https://qiskit.org/). This example can factor very small numbers (like 15, 21), illustrating core concepts rather than large-scale factorization. More info [here](https://github.com/Qiskit/textbook/blob/main/notebooks/ch-algorithms/shor.ipynb)
 
 ```python
 from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, Aer, execute
