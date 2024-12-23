@@ -21,7 +21,7 @@ As a result, LSSS is widely used as a foundational cryptographic method in vario
 
 <br/>
 
-## Core Components and Processes**
+## Core Components and Processes
 
 - **Secret:** $s \in \mathbb{Z}_p$
 - **Random Values:** $r_2, r_3, \ldots, r_d \in \mathbb{Z}_p$
