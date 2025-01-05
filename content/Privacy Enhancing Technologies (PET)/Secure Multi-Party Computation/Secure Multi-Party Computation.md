@@ -13,8 +13,7 @@ In other words, MPC is a technology that enables multiple parties to collaborati
 
 ### Advanced Explanation
 
-SMPC uses cryptographic primitives like secret sharing (e.g. Shamir), homomorphic encryption (e.g. Paillier, ElGamal), and zero-knowledge proofs (e.g., zk-SNARKs, zk-STARKs) to enable a given number (n) of participants each with private data $(d_1, d_2, \ldots, d_n)$ to compute a public function $F(d_1, d_2, \ldots, d_n)$ on that data, without knowing information about the inputs of other participants.
-
+SMPC uses cryptographic primitives like [[Secret Sharing]] (e.g. Shamir), homomorphic encryption (e.g. Paillier, [[ElGamal]]), and [[Zero Knowledge Proofs]] (e.g., [[ZK-SNARK]], zk-STARKs) to enable a given number (n) of participants each with private data $(d_1, d_2, \ldots, d_n)$ to compute a public function $F(d_1, d_2, \ldots, d_n)$ on that data, without knowing information about the inputs of other participants.
 
 **Example 1:**
 
