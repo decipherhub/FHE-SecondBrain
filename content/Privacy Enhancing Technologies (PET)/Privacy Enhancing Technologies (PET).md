@@ -4,7 +4,7 @@
 
 - [[Fully Homomorphic Encryption]]
 - [[Secure Multi-Party Computation]]
+- [[Secret Sharing]]
 - [[Differential Privacy]]
-- [[Federated Learning]]
 - [[Trusted Execution Environment]]
 - [[Zero Knowledge Proofs]]
