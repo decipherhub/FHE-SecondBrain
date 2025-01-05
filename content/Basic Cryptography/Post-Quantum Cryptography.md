@@ -15,15 +15,15 @@ The public key cryptosystems currently in widespread use, such as [[RSA]], **Ell
 - **Integer Factorization**: The basis for [[RSA]] encryption.
 - **Discrete Logarithm Problem**: Used in [[Diffie-Hellman]] and ECC.
 
-Quantum computers threaten these systems because of algorithms like **Shor's algorithm**, which can solve these problems in polynomial time, effectively breaking the security of these cryptosystems.
+Quantum computers threaten these systems because of algorithms like **[[Shor's algorithm]]**, which can solve these problems in polynomial time, effectively breaking the security of these cryptosystems.
 
-#### Shor's Algorithm
+#### [[Shor's Algorithm]]
 
 - **Developed by**: Peter Shor in 1994.
 - **Capability**: Efficiently factors large integers and computes discrete logarithms.
 - **Impact**: Can break [[RSA]], ECC, and other cryptosystems relying on these hard problems.
 
-#### Grover's Algorithm
+#### [[Grover's Algorithm]]
 
 - **Developed by**: Lov Grover in 1996.
 - **Capability**: Provides a quadratic speedup for unstructured search problems.
@@ -89,7 +89,7 @@ Post-quantum cryptographic algorithms are based on mathematical problems believe
 
 6. **Symmetric-Key Quantum Resistance**
 
-   - **Approach**: Doubling key sizes in symmetric algorithms to counteract Grover's algorithm.
+   - **Approach**: Doubling key sizes in symmetric algorithms to counteract [[Grover's algorithm]].
    - **Examples**: Using AES-256 instead of AES-128.
 
 ## NIST Post-Quantum Cryptography Standardization Program
