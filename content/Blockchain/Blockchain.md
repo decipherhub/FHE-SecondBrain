@@ -3,3 +3,5 @@
 
 
 - [[fhEVM]]
+- [[Bitcoin]]
+- [[Ethereum]]
