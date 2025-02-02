@@ -18,7 +18,7 @@ If the length of the plaintext to be encrypted is longer than the block size, a 
 
 | Confidentiality only                                                                                                           | Authenticated Encryption with Additional Data(AEAD)                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| - ECB(Electric Codebook)<br>- CBC(Cipher-block Chaining)<br>- CFB(Cipher Feedback)<br>- OFB(Output Feedback)<br>- CTR(Counter) | - GCM(Galois counter)<br>- CCM(Counter with cipher block chaining message authentication code)<br>- SIV(Synthetic initialization vector)<br>- AES-GCM-SIV |
+| - [[ECB(Electric Codebook)]]<br>- [[CBC(Cipher-block Chaining)]]<br>- [[CFB(Cipher Feedback)]]<br>- [[OFB(Output Feedback)]]<br>- [[CTR(Counter)]] | - GCM(Galois counter)<br>- CCM(Counter with cipher block chaining message authentication code)<br>- SIV(Synthetic initialization vector)<br>- AES-GCM-SIV |
 
 ## Comparison with [[Stream cipher]]
 |                  | [[Stream Cipher]]                     | Block Cipher                                          |
