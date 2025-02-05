@@ -58,7 +58,7 @@ Analyzing the 1-round Feistel Cipher reveals a critical drawback: the right half
 
 To address this issue, Feistel Cipher structures are designed with multiple rounds. In a multi-round Feistel Cipher, the left and right halves are swapped at the end of each round, effectively ensuring that all parts of the plaintext are processed. However, this design requires more rounds compared to Non-Feistel Ciphers to achieve the same level of security.
 
-### 다중 라운드 페이스텔 구조
+### Multi-Round Feistel Structure
 ![[Feistel_cipher(2).png]]
 The diagram above illustrates a Feistel structure with multiple rounds, as opposed to a single round.
 
