@@ -18,13 +18,6 @@ A well-known example of a Feistel Cipher is [[DES]] (Data Encryption Standard). 
 
 The left side represents the encryption process, while the right side shows the decryption process.
 
-먼저 암호화 과정을 살펴보겠다.
-암호화 과정에서 입력으로 들어오는 평문  $p = (L_0 \parallel R_0)$는 $L_0$와 $R_0$로 나뉘어진다.
-함수 $F$는 키 $k$와 $R_0$을 입력으로 받는다.
-$L_0$은 위에서 언급한 함수 $F(k, R_0)$와 XOR되어 암호문의 왼쪽 절반인 $L_1$이 된다. $R_0$는 그대로 암호문의 오른쪽 절반인 $R_1$이 된다.
-
-이러한 암호화 과정을 수식으로 나타내면 다음과 같다:
-
 #### Encryption Process
 
 In the encryption process, the plaintext input $p = (L_0 \parallel R_0)$ is divided into $L_0$​ and $R_0$​. A function $F$ takes the key $k$ and $R_0$​ as its input. Then, $L_0$​ is XORed with the output of $F(k, R_0)$, producing the left half of the ciphertext $L_1$. Meanwhile, $R_0$​ remains unchanged and becomes the right half of the ciphertext $R_1$​.
@@ -67,10 +60,14 @@ To address this issue, Feistel Cipher structures are designed with multiple roun
 
 ### 다중 라운드 페이스텔 구조
 ![[Feistel_cipher(2).png]]
-위의 그림은 라운드가 한 번이 아닌 페이스텔 구조를 나타낸 것이다.
+The diagram above illustrates a Feistel structure with multiple rounds, as opposed to a single round.
 
-1라운드 페이스텔 구조와는 다르게, 다중 라운드 페이스텔 구조의 암호화 과정에서는 첫 번째 라운드의 오른쪽 절반인 $R_0$가 그대로 $R_1$이 되는 것이 아니라 출력의 왼쪽 절반인 $L_1$이 된다. 또한, 1라운드 페이스텔 구조에서 XOR 연산이 이루어졌던 계산값이 $L_1$이 아닌 $R_1$이 된다. 즉, 1라운드 페이스텔 구조의 좌우 결과가 뒤바뀌는 것이다.
-두 번째 라운드에서는 $L_1$이 암호화 과정을 거치기 때문에 결과적으로 평문 $L_0$과 $R_0$이 모두 암호화 과정을 거친다.
+#### Encryption Process
+
+Unlike the single-round Feistel structure, in a multi-round Feistel Cipher, the right half of the plaintext ($R_0$) does not directly become the right half of the ciphertext ($R_1$). Instead, it becomes the left half of the output ($L_1$). Additionally, the XOR computation that previously resulted in $L_1$ in the single-round structure now determines $R_1$. In other words, the outputs of the left and right halves are swapped after each round.
+In the second round, $L_1$ undergoes further encryption, ensuring that both $L_0$ and $R_0$ are processed through the encryption rounds.
+
+The encryption process can be expressed as follows:
 $$L_1 = R_0$$
 $$
 R_1 = L_0 \oplus F(k_1, R_0)
@@ -82,7 +79,9 @@ $$
 R_2 = R_1
 $$
 
-복호화 과정 또한 암호화 과정과 동일하여 입력되는 키의 순서만 역으로 바뀐다.
+#### Decryption Process
+
+The decryption process mirrors the encryption process, with the only difference being the reverse order of the keys used during the computation.
 $$
 L'_1 = R'_0 = R_2 = R_1
 $$
@@ -103,5 +102,5 @@ R'_2 = R'_1 = R_0
 $$
 
 > [!Note] 
-> 페이스텔 구조 2라운드는 비페이스텔 구조 1라운드와 같은 안전성을 갖는다. 따라서 상대적으로 더 많은 라운드 수가 필요하다.
+> A Feistel Cipher with two rounds provides the same level of security as a single round of a Non-Feistel Cipher. Therefore, Feistel Ciphers generally require a greater number of rounds to achieve comparable security.
 
