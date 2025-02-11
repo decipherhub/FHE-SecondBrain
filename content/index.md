@@ -1,7 +1,8 @@
 ---
 title: Welcome to Cryptography SecondBrain
 ---
-Welcome to Cryptography SecondBrain. This is a comprehensive wiki covering a wide range of cryptographic topics from basic algebra to various Privacy Enhancing Technologies (PET). For newcomers, please refer to [[How to get started]] to learn how to use this wiki for your studies.
+# Welcome to Cryptography SecondBrain! 
+This is a comprehensive wiki covering a wide range of cryptographic topics from basic algebra to various Privacy Enhancing Technologies (PET). For newcomers, please refer to [[How to get started]] to learn how to use this wiki for your studies.
 
 Cryptography SecondBrain is an open-source project maintained by Decipher. If you have an interest in cryptography, we encourage you to contribute and share your knowledge. For more details on how to get involved, please refer to our [[Contribution Guide]].
 
