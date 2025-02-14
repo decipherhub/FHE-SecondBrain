@@ -11,6 +11,8 @@
 - [[Equivalence Relation]]
 - [[Quotient Ring]]
 - [[Ring Homomorphism]]
+- [[Commutative Ring]]
+- [[Division Ring]]
 - [[Field]]
 - [[Finite Field]]
 - [[Cyclotomic polynomial]]
