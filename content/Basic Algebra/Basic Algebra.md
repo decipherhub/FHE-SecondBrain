@@ -7,6 +7,8 @@
 - [[Subgroup]]
 - [[Cyclic Subgroup]]
 - [[Ring]]
+- [[Division Ring]]
+- [[Commutative Ring]]
 - [[Binary Relation]]
 - [[Equivalence Relation]]
 - [[Quotient Ring]]

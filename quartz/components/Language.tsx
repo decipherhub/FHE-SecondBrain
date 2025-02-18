@@ -4,31 +4,31 @@
 import languageScript from "./scripts/language.inline"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import languageStyle from "./styles/language.scss"
-
-const languages = [
-    { code: 'en', name: 'English' },
-    { code: 'ko', name: 'Korean' },
-    { code: 'ja', name: 'Japanese' },
-    { code: 'zh', name: 'Chinese' },
-    { code: 'es', name: 'Spanish' },
-    { code: 'fr', name: 'French' }
-];
+import { classNames } from "../util/lang"
 
 const Language: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
+    const currentLang = typeof window !== 'undefined' ? localStorage.getItem('lang') || 'en' : 'en'
+    
     return (
-        <div class="language-selector">
-            <label for="language-select">Language: </label>
-            <select id="language-select">
-                {languages.map(language => (
-                    <option value={language.code} key={language.code}>
-                        {language.name}
-                    </option>
-                ))}
-            </select>
+        <div class={classNames(displayClass, "language-selector")}>
+            <button
+                class={`lang-button ${currentLang === 'en' ? 'active' : ''}`}
+                data-lang="en"
+                aria-label="Switch to English"
+            >
+                En
+            </button>
+            <button
+                class={`lang-button ${currentLang === 'ko' ? 'active' : ''}`}
+                data-lang="ko"
+                aria-label="한국어로 전환"
+            >
+                Ko
+            </button>
         </div>
     )
 }
 
-Language.beforeDOMLoaded = languageScript;
-Language.css = languageStyle;
+Language.beforeDOMLoaded = languageScript
+Language.css = languageStyle
 export default (() => Language) satisfies QuartzComponentConstructor

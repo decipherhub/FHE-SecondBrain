@@ -1,74 +1,59 @@
-const userLang = navigator.language.startsWith("ko")
-  ? "ko"
-  : navigator.language.startsWith("ja")
-    ? "ja"
-    : navigator.language.startsWith("zh")
-      ? "zh"
-      : navigator.language.startsWith("es")
-        ? "es"
-        : navigator.language.startsWith("fr")
-          ? "fr"
-          : "en"
+const userLang = navigator.language.split('-')[0]
+const currentLang = localStorage.getItem('lang') || userLang
 
-const currentLang = localStorage.getItem("lang") ?? userLang
-document.documentElement.setAttribute("lang", currentLang)
-
-const emitLangChangeEvent = (lang: string) => {
-  const event = new CustomEvent("langchange", {
-    detail: { lang },
-  })
-  document.dispatchEvent(event)
-}
-
-const getCurrentPathWithoutLang = () => {
-  const path = window.location.pathname
-  const pathParts = path.split("/").filter((part) => part)
-
-  if (pathParts[0] === "i18n") {
-    pathParts.splice(0, 2)
-  }
-  return pathParts.join("/")
-}
-
-const navigateToUrl = async (url) => {
-  try {
-    const response = await fetch(url, { method: "HEAD" })
-    if (response.status === 404) {
-      window.location.href = "/translate"
-    } else {
-      window.location.href = url
+function getCurrentPathWithoutLang() {
+    const path = window.location.pathname
+    const parts = path.split('/')
+    if (parts[1] === 'i18n') {
+        parts.splice(1, 2)
     }
-  } catch (error) {
-    console.error("Failed to check URL status:", error)
-    window.location.href = "/translate"
-  }
+    return parts.join('/').replace(/^\/+/, '')
+}
+
+function navigateToUrl(url: string) {
+    window.location.href = url
+}
+
+function emitLangChangeEvent(lang: string) {
+    const event = new CustomEvent('langchange', { detail: { lang } })
+    document.dispatchEvent(event)
 }
 
 document.addEventListener("nav", () => {
-  const switchLang = async (e: Event) => {
-    const newLang = (e.target as HTMLSelectElement)?.value
-    document.documentElement.setAttribute("lang", newLang)
-    localStorage.setItem("lang", newLang)
-    emitLangChangeEvent(newLang)
+    const switchLang = async (e: Event) => {
+        const button = e.target as HTMLButtonElement
+        const newLang = button.dataset.lang
+        if (!newLang) return
 
-    const currentPath = getCurrentPathWithoutLang()
-    const newUrl = newLang === "en" ? `/${currentPath}` : `/i18n/${newLang}/${currentPath}`
+        document.documentElement.setAttribute("lang", newLang)
+        localStorage.setItem("lang", newLang)
+        emitLangChangeEvent(newLang)
 
-    await navigateToUrl(newUrl)
-  }
+        const currentPath = getCurrentPathWithoutLang()
+        const newUrl = newLang === "en" ? `/${currentPath}` : `/i18n/${newLang}/${currentPath}`
 
-  const langSelect = document.querySelector("#language-select") as HTMLSelectElement
-  langSelect.addEventListener("change", switchLang)
-  window.addCleanup(() => langSelect.removeEventListener("change", switchLang))
-  if (currentLang) {
-    langSelect.value = currentLang
-  }
+        await navigateToUrl(newUrl)
+    }
+
+    const langButtons = document.querySelectorAll(".lang-button")
+    langButtons.forEach(button => {
+        button.addEventListener("click", switchLang)
+        window.addCleanup(() => button.removeEventListener("click", switchLang))
+    })
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-  const lang = localStorage.getItem("lang") ?? userLang
-  document.documentElement.setAttribute("lang", lang)
-  emitLangChangeEvent(lang)
+    const lang = localStorage.getItem("lang") ?? userLang
+    document.documentElement.setAttribute("lang", lang)
+    emitLangChangeEvent(lang)
+
+    // Update active button state
+    const langButtons = document.querySelectorAll(".lang-button")
+    langButtons.forEach(button => {
+        if (button instanceof HTMLButtonElement) {
+            button.classList.toggle('active', button.dataset.lang === lang)
+        }
+    })
 })
 
 document.addEventListener("langchange", (event) => {
