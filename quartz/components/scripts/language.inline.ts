@@ -1,6 +1,3 @@
-const userLang = 'en'  // Always default to English
-const currentLang = localStorage.getItem('lang') || userLang
-
 function getCurrentPathWithoutLang() {
     const path = window.location.pathname
     const parts = path.split('/')
@@ -43,8 +40,17 @@ document.addEventListener("nav", () => {
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-    const lang = localStorage.getItem("lang") ?? userLang
+    // Check if current path contains language info
+    const path = window.location.pathname
+    const parts = path.split('/')
+    const isKoreanPath = parts[1] === 'i18n' && parts[2] === 'ko'
+    
+    // Default to English unless explicitly on Korean path
+    const lang = isKoreanPath ? 'ko' : 'en'
+    
+    // Set the language
     document.documentElement.setAttribute("lang", lang)
+    localStorage.setItem("lang", lang)
     emitLangChangeEvent(lang)
 
     // Update active button state
@@ -57,12 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 document.addEventListener("langchange", (event) => {
-  const newLang = event.detail.lang
-  console.log(`Language changed to: ${newLang}`)
+    const newLang = event.detail.lang
+    console.log(`Language changed to: ${newLang}`)
 
-  // Update language selector value
-  const langSelect = document.querySelector("#language-select") as HTMLSelectElement
-  if (langSelect) {
-    langSelect.value = newLang
-  }
+    // Update language selector value
+    const langSelect = document.querySelector("#language-select") as HTMLSelectElement
+    if (langSelect) {
+        langSelect.value = newLang
+    }
 })

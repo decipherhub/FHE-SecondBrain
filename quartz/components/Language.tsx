@@ -7,7 +7,10 @@ import languageStyle from "./styles/language.scss"
 import { classNames } from "../util/lang"
 
 const Language: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
-    const currentLang = typeof window !== 'undefined' ? localStorage.getItem('lang') || 'en' : 'en'
+    const path = typeof window !== 'undefined' ? window.location.pathname : ''
+    const parts = path.split('/')
+    const isKoreanPath = parts[1] === 'i18n' && parts[2] === 'ko'
+    const currentLang = isKoreanPath ? 'ko' : 'en'
     
     return (
         <div class={classNames(displayClass, "language-selector")}>
