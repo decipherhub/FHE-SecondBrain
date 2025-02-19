@@ -1,4 +1,4 @@
-const userLang = navigator.language.split('-')[0]
+const userLang = 'en'  // Always default to English
 const currentLang = localStorage.getItem('lang') || userLang
 
 function getCurrentPathWithoutLang() {
