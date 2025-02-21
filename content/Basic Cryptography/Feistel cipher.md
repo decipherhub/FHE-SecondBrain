@@ -73,15 +73,16 @@ $$
 R_1 = L_0 \oplus F(k_1, R_0)
 $$
 $$
-L_2 = L_1 \oplus F(k_2, R_1)
+L_n = L_{n-1} \oplus F(k_n, R_{n-1})
 $$
 $$
-R_2 = R_1
+R_2 = R_{n-1}
 $$
 
 #### Decryption Process
 
 The decryption process mirrors the encryption process, with the only difference being the reverse order of the keys used during the computation.
+The following equation represents the decryption process in a two-round Feistel structure.
 $$
 L'_1 = R'_0 = R_2 = R_1
 $$
