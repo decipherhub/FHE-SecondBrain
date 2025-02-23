@@ -11,7 +11,7 @@ In addition to its cryptographic foundations, Ethereum leverages innovative conc
 
 ## Cryptographic Components in Ethereum
 
-### 1. **[[Elliptic Curves]] Cryptography (ECC)**
+### 1. **[[Elliptic Curves]] Cryptography ([[ECC]])**
 
 Ethereum uses the **secp256k1** elliptic curve for public and private key generation, the same as [[Bitcoin]]. This ensures secure, asymmetric encryption for Ethereum wallets and transactions.
 
@@ -19,25 +19,15 @@ Ethereum uses the **secp256k1** elliptic curve for public and private key genera
 - A **private key** is a randomly generated 256-bit number.
 - The **public key** is derived using elliptic curve multiplication with a predefined generator point.
 
-#### Features:
-- **Asymmetry**: Private keys are secret, while public keys are shared for verification.
-- **Security**: The elliptic curve discrete logarithm problem ([[ECDLP]]) makes it infeasible to compute private keys from public keys.
-
 #### Applications in Ethereum:
 - **Wallet Addresses**: Ethereum addresses are derived by hashing the public key with **Keccak-256** and taking the last 20 bytes.
 - **Transaction Signing**: Private keys are used to sign transactions, ensuring authenticity and preventing tampering.
 
 ---
 
-### 2. **Hash Functions**
+### 2. **[[Hash function]]s**
 
 Ethereum uses **Keccak-256**, a variant of the [[SHA]]-3 family of cryptographic [[Hash function]]s, as its primary hashing algorithm.
-
-#### Characteristics of Keccak-256:
-- **Deterministic**: The same input always produces the same hash.
-- **Pre-image Resistance**: It is computationally infeasible to reverse-engineer the input from the hash.
-- **Collision Resistance**: No two different inputs produce the same hash.
-- **Avalanche Effect**: Small changes in input result in significantly different hashes.
 
 #### Applications in Ethereum:
 - **Transaction Hashes**: Every transaction is uniquely identified by its hash.
@@ -113,7 +103,7 @@ Ethereum supports **[[Zero Knowledge Proofs]]** through Layer 2 solutions and zk
 
 ### 2. **Homomorphic Encryption**
 
-Though not natively implemented in Ethereum, research into homomorphic encryption explores enabling computations on encrypted data without decrypting it, which could benefit private smart contracts.
+Though not natively implemented in Ethereum, research into homomorphic encryption explores enabling computations on encrypted data without decrypting it, which could benefit private smart contracts. Check **[Zama](https://www.zama.ai/).**
 
 ---
 

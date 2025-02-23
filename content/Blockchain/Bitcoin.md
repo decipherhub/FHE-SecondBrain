@@ -5,7 +5,7 @@
 Bitcoin is a decentralized digital currency that operates on a peer-to-peer network. It was introduced in 2009 by an anonymous individual or group and since then became the most recognized and widely used cryptocurrencies in the world. It remains the largest cryptocurrency by market capitalization.
 
 Bitcoin leverages asymmetric encryption, cryptographic hash functions, and digital signatures to enable secure transactions without requiring a trusted intermediary.
-At the core of Bitcoin's security are two fundamental cryptographic constructs: **[[Elliptic Curves]] cryptography (ECC)** for public and private keys, and **[[SHA]]-256**, a cryptographic hash function used for mining and transaction validation.
+At the core of Bitcoin's security are two fundamental cryptographic constructs: **[[Elliptic Curves]] cryptography ([[ECC]])** for public and private keys, and **[[SHA]]-256**, a cryptographic hash function used for mining and transaction validation.
 
 ---
 
@@ -17,11 +17,11 @@ Bitcoin uses the **secp256k1** curve for key generation and digital signatures. 
 - **Digital Signatures:** Ensures that only the owner of the private key can authorize a transaction.
 - **Transaction Validation:** Verifiers use the public key to confirm the authenticity of a signature.
 ---
-### 2. **[[Hash Functions]]**
+### 2. **[[Hash function]]s**
 Bitcoin relies heavily on cryptographic hash functions, primarily **[[SHA]]-256** (Secure Hash Algorithm 256-bit), to ensure the security and integrity of data. The function is primaraly used for:
 - **Mining:** Proof-of-work requires finding a valid nonce such that the double SHA-256 hash of a block header starts with a certain number of leading zeroes (proof-of-work).
 - **Transaction Verification:** Bitcoin transactions within a block are SHA-256 hashed and arranged in a [[Merkle Tree]] to enable efficient verification of them.
-- **Address Generation:** Bitcoin addresses are derived by applying **[[SHA-256]]** and **RIPEMD-160** to the public key.
+- **Address Generation:** Bitcoin addresses are derived by applying **[[SHA]]-256** and **RIPEMD-160** to the public key.
 
 Hashes ensure security by making reversal infeasible, preventing collisions, and maintaining data integrity.
 
@@ -81,7 +81,7 @@ Bitcoin developers and researchers are exploring advanced cryptographic techniqu
 Although not natively supported, Bitcoin sidechains and layer-2 solutions are exploring zero-knowledge proofs to enable private transactions.
 
 #### Examples:
-- **Taproot & Scriptless Scripts**: Use ZKPs (e.g., [[Schnorr signature]]s) to enhance privacy in multi-signature and smart contracts.
+- **Taproot & Scriptless Scripts**: Use ZKPs (e.g., [[Schnorr Signature]]s) to enhance privacy in multi-signature and smart contracts.
 - **Sidechains (RSK, StarkNet experiments)**: Exploring zk-Rollups for scalability and privacy.
 - **Mercury Statechains**: Enables off-chain Bitcoin transfers with enhanced privacy.
 - **zk-Bitcoin (Future Research)**: Investigating SNARKs/STARKs for shielded transactions.

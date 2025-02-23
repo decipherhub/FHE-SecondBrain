@@ -1,6 +1,6 @@
 # Elliptic Curve Cryptography (ECC)
 
-Elliptic Curve Cryptography (ECC) is a modern public-key cryptography system that leverages the algebraic structure of [[elliptic curves]] over finite fields. Its security is based on the difficulty of solving the **Elliptic Curve Discrete Logarithm Problem ([[ECDLP]])**, making it a powerful alternative to traditional systems like RSA—with the significant benefit of much smaller key sizes for equivalent security.
+Elliptic Curve Cryptography (ECC) is a modern public-key cryptography system that leverages the algebraic structure of [[Elliptic Curves]] over finite fields. Its security is based on the difficulty of solving the **Elliptic Curve Discrete Logarithm Problem ([[ECDLP]])**, making it a powerful alternative to traditional systems like RSA—with the significant benefit of much smaller key sizes for equivalent security.
 
 ---
 
@@ -8,7 +8,7 @@ Elliptic Curve Cryptography (ECC) is a modern public-key cryptography system tha
 
 **Key security properties of ECC:**
 
-1. **Difficulty of the Elliptic Curve Discrete Logarithm Problem (ECDLP)**  
+1. **Difficulty of the Elliptic Curve Discrete Logarithm Problem ([[ECDLP]])**  
    - Given an elliptic curve, a base point \( G \), and a point \( Q = kG \), it is computationally infeasible to determine the scalar \( k \) (the private key).
 
 2. **Versatility in Cryptographic Operations**  
@@ -92,7 +92,7 @@ ECC is widely used across various applications:
 
 ## 5. Summary
 
-- **Elliptic Curve Cryptography (ECC)** leverages the mathematical properties of [[elliptic curves]] to enable secure public-key cryptographic systems.
+- **Elliptic Curve Cryptography (ECC)** leverages the mathematical properties of [[Elliptic Curves]] to enable secure public-key cryptographic systems.
 - The **Elliptic Curve Discrete Logarithm Problem ([[ECDLP]])** forms the basis of its security, making it infeasible to derive private keys from public keys.
 - ECC supports critical operations such as key exchange (ECDH) and digital signatures (ECDSA), making it highly versatile.
 - With its efficient, compact key sizes, ECC offers significant advantages over traditional systems like [[RSA]], particularly in environments with limited computational resources.
