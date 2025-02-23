@@ -11,26 +11,12 @@ At the core of Bitcoin's security are two fundamental cryptographic constructs: 
 
 ## Cryptographic Components in Bitcoin
 
-### 1. **Elliptic Curve Cryptography (ECC)**
-
-Bitcoin uses **secp256k1**, an elliptic curve defined over a finite field, for generating and verifying public and private keys.
-
-#### How It Works
-- A **private key** is a randomly generated 256-bit number.
-- The corresponding **public key** is derived by performing an elliptic curve multiplication using the private key and a predefined generator point on the curve.
-
-#### Features
-- **Asymmetry**: The private key is kept secret, while the public key is shared freely.
-- **Security**: The elliptic curve discrete logarithm problem ([[ECDLP]]) ensures that deriving the private key from the public key is computationally infeasible.
-- **Efficiency**: ECC provides strong security with smaller key sizes compared to other cryptographic methods like [[RSA]].
-
-#### Applications in Bitcoin
-- **Key Generation**: Every Bitcoin wallet is a pair of public and private keys.
-- **[[Digital Signature]]s**: Ensures that only the owner of the private key can authorize a transaction.
-- **Transaction Validation**: Verifiers use the public key to confirm the authenticity of a signature.
-
+### 1. **Elliptic Curve Cryptography ([[ECC]])**
+Bitcoin uses the **secp256k1** curve for key generation and digital signatures. [[ECC]] enables:
+- **Key Generation:** Deriving public keys from 256-bit private keys.
+- **Digital Signatures:** Ensures that only the owner of the private key can authorize a transaction.
+- **Transaction Validation:** Verifiers use the public key to confirm the authenticity of a signature.
 ---
-
 ### 2. **Hash Functions**
 
 Bitcoin relies heavily on cryptographic hash functions, primarily **[[SHA]]-256** (Secure Hash Algorithm 256-bit), to ensure the security and integrity of data.
