@@ -63,6 +63,8 @@ Consider a simplified scenario:
 1. **Curve and Base Point Selection:**  
    - Assume a curve defined by \( y^2 = x^3 + ax + b \) over a prime field \( \mathbb{F}_p \) with a base point \( G \).
 
+![Elliptic Curve](ECC.png)
+
 2. **Key Generation:**  
    - **Alice's Private Key:** \( k_A \)  
    - **Alice's Public Key:** \( Q_A = k_A \times G \)  
