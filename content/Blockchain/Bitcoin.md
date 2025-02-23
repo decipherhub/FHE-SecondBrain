@@ -84,7 +84,7 @@ Although not natively supported, Bitcoin sidechains and layer-2 solutions are ex
 - **Taproot & Scriptless Scripts**: Use ZKPs (e.g., [[Schnorr Signature]]s) to enhance privacy in multi-signature and smart contracts.
 - **Sidechains (RSK, StarkNet experiments)**: Exploring zk-Rollups for scalability and privacy.
 - **Mercury Statechains**: Enables off-chain Bitcoin transfers with enhanced privacy.
-- **zk-Bitcoin (Future Research)**: Investigating SNARKs/STARKs for shielded transactions.
+- **zk-Bitcoin (Future Research)**: Investigating [[ZK-SNARK]]s/STARKs for shielded transactions.
 
 ### 3. **Quantum Resistance**
 Efforts are underway to evaluate quantum-resistant algorithms, such as lattice-based cryptography, for potential integration into Bitcoin in the distant future.

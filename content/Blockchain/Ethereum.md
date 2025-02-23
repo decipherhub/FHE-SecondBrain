@@ -3,7 +3,7 @@
 ## Introduction
 
 Ethereum is a decentralized, open-source blockchain platform that enables developers to build and deploy decentralized applications (dApps) and smart contracts. It was proposed by Vitalik Buterin in 2013 and officially launched on July 30, 2015. Ethereum introduces programmability, enabling developers to create self-executing contracts and complex decentralized applications.
-Ethereum relies on advanced cryptographic principles such as elliptic curve cryptography (ECC), cryptographic hash functions, and digital signatures to secure transactions, validate blocks, and enable smart contract execution.
+Ethereum relies on advanced cryptographic principles such as elliptic curve cryptography ([[ECC]]), cryptographic hash functions, and digital signatures to secure transactions, validate blocks, and enable smart contract execution.
 
 In addition to its cryptographic foundations, Ethereum leverages innovative concepts like **Merkle Patricia Trees**, **Keccak-256**, and **[[Zero Knowledge Proofs]]** to support its decentralized architecture and extend its functionality beyond simple value transfers.
 
