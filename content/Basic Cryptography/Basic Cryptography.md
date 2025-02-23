@@ -23,3 +23,4 @@
 - [[Schnorr Signature]]
 - [[SHA]]
 - [[ECC]]
+- [[Hash Functions]]

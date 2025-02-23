@@ -17,7 +17,7 @@ Bitcoin uses the **secp256k1** curve for key generation and digital signatures. 
 - **Digital Signatures:** Ensures that only the owner of the private key can authorize a transaction.
 - **Transaction Validation:** Verifiers use the public key to confirm the authenticity of a signature.
 ---
-### 2. **Hash Functions**
+### 2. **[[Hash Functions]]**
 
 Bitcoin relies heavily on cryptographic hash functions, primarily **[[SHA]]-256** (Secure Hash Algorithm 256-bit), to ensure the security and integrity of data.
 
@@ -34,7 +34,7 @@ Bitcoin relies heavily on cryptographic hash functions, primarily **[[SHA]]-256*
 
 ---
 
-### 3. **Digital Signatures**
+### 3. **[[Digital Signature]]s**
 
 Bitcoin uses the **Elliptic Curve Digital Signature Algorithm ([[ECDSA]])** for transaction signing.
 
