@@ -80,8 +80,18 @@ Bitcoin developers and researchers are exploring advanced cryptographic techniqu
 ### 2. **[[Zero Knowledge Proofs]]**
 Although not natively supported, Bitcoin sidechains and layer-2 solutions are exploring zero-knowledge proofs to enable private transactions.
 
+#### Examples:
+- **Taproot & Scriptless Scripts**: Use ZKPs (e.g., [[Schnorr signature]]s) to enhance privacy in multi-signature and smart contracts.
+- **Sidechains (RSK, StarkNet experiments)**: Exploring zk-Rollups for scalability and privacy.
+- **Mercury Statechains**: Enables off-chain Bitcoin transfers with enhanced privacy.
+- **zk-Bitcoin (Future Research)**: Investigating SNARKs/STARKs for shielded transactions.
+
 ### 3. **Quantum Resistance**
 Efforts are underway to evaluate quantum-resistant algorithms, such as lattice-based cryptography, for potential integration into Bitcoin in the distant future.
+
+#### Examples:
+- **Bitcoin Layer-2 Solutions**: Sidechains and second-layer protocols exploring quantum-safe cryptographic primitives.
+- **Soft Fork Proposals**: Discussions on introducing quantum-resistant key pairs as optional upgrades for Bitcoin users.
 
 ---
 
