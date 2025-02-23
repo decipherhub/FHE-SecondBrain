@@ -18,19 +18,12 @@ Bitcoin uses the **secp256k1** curve for key generation and digital signatures. 
 - **Transaction Validation:** Verifiers use the public key to confirm the authenticity of a signature.
 ---
 ### 2. **[[Hash Functions]]**
+Bitcoin relies heavily on cryptographic hash functions, primarily **[[SHA]]-256** (Secure Hash Algorithm 256-bit), to ensure the security and integrity of data. The function is primaraly used for:
+- **Mining:** Proof-of-work requires finding a valid nonce such that the double SHA-256 hash of a block header starts with a certain number of leading zeroes (proof-of-work).
+- **Transaction Verification:** Bitcoin transactions within a block are SHA-256 hashed and arranged in a [[Merkle Tree]] to enable efficient verification of them.
+- **Address Generation:** Bitcoin addresses are derived by applying **[[SHA-256]]** and **RIPEMD-160** to the public key.
 
-Bitcoin relies heavily on cryptographic hash functions, primarily **[[SHA]]-256** (Secure Hash Algorithm 256-bit), to ensure the security and integrity of data.
-
-#### Characteristics of SHA-256
-- **Deterministic**: The same input always produces the same output.
-- **Pre-image Resistance**: It is computationally infeasible to reverse a hash and find the original input.
-- **Collision Resistance**: Two different inputs will not produce the same output hash.
-- **Avalanche Effect**: A small change in the input drastically changes the output.
-
-#### Applications in Bitcoin:
-- **Mining**: Miners solve a computationally intensive problem by finding a nonce such that the double SHA-256 hash of a block header starts with a certain number of leading zeroes (proof-of-work).
-- **Merkle Trees**: Bitcoin transactions within a block are hashed and arranged in a [[Merkle Tree]] to enable efficient verification of transactions.
-- **Address Generation**: Bitcoin addresses are derived by applying the [[SHA]]-256 and RIPEMD-160 hash functions to the public key.
+Hashes ensure security by making reversal infeasible, preventing collisions, and maintaining data integrity.
 
 ---
 
@@ -42,10 +35,6 @@ Bitcoin uses the **Elliptic Curve Digital Signature Algorithm ([[ECDSA]])** for 
 1. A sender signs a transaction with their private key.
 2. The recipient and network nodes use the sender's public key to verify the signature.
 
-#### Features:
-- **Authenticity**: Ensures that only the owner of the private key can sign transactions.
-- **Integrity**: Prevents transaction data from being altered after signing.
-- **Non-repudiation**: The sender cannot deny authoring the signature.
 
 #### Example in Bitcoin:
 When Alice sends Bitcoin to Bob, she signs the transaction using her private key. The network verifies the signature using Alice's public key before adding the transaction to the blockchain.
